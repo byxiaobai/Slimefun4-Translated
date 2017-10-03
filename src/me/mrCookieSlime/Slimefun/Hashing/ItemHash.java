@@ -1,8 +1,3 @@
-// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
-// Jad home page: http://www.kpdus.com/jad.html
-// Decompiler options: packimports(3) fieldsfirst 
-// Source File Name:   ItemHash.java
-
 package me.mrCookieSlime.Slimefun.Hashing;
 
 import java.io.PrintStream;
@@ -65,7 +60,7 @@ public class ItemHash
         String hash = hash(item.getName());
         if(map.containsKey(hash) && !item.getName().equals(((SlimefunItem)map.get(hash)).hash))
         {
-            System.out.println("FATAL Security ERROR - Slimefun was disabled.");
+            System.out.println("致命安全错误 - Slimefun 已被禁用.");
             Bukkit.getPluginManager().disablePlugin(SlimefunStartup.instance);
             throw new IllegalStateException((new StringBuilder("Hash Collision: ")).append(hash).toString());
         } else
@@ -85,7 +80,7 @@ public class ItemHash
         }
         catch(NoSuchAlgorithmException e)
         {
-            System.out.println("FATAL Security ERROR - Slimefun was disabled.");
+            System.out.println("致命安全错误 - Slimefun 已被禁用.");
             Bukkit.getPluginManager().disablePlugin(SlimefunStartup.instance);
             e.printStackTrace();
         }
