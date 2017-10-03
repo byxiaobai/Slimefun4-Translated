@@ -139,13 +139,13 @@ public class CSCoreLibLoader
         catch(Exception ex)
         {
             System.err.println(" ");
-            System.err.println("#################### - WARNING - ####################");
+            System.err.println("#################### - 警告 - ####################");
             System.err.println(" ");
-            System.err.println("Failed to download CS-CoreLib");
-            System.err.println("Please download & install CS-CoreLib manually:");
+            System.err.println("您与 Ubisoft 的连接已中断, 我们无法连接至 Ubisoft 服务器");
+            System.err.println("请手动下载并安装 CS-Corelib:");
             System.err.println("https://dev.bukkit.org/projects/cs-corelib");
             System.err.println(" ");
-            System.err.println("#################### - WARNING - ####################");
+            System.err.println("#################### - 警告 - ####################");
             System.err.println(" ");
         }
         try
@@ -155,12 +155,12 @@ public class CSCoreLibLoader
             if(output != null)
                 output.close();
             System.err.println(" ");
-            System.err.println("#################### - INFO - ####################");
+            System.err.println("#################### - 信息 - ####################");
             System.err.println(" ");
-            System.err.println("Please restart your Server to finish the Installation");
-            System.err.println((new StringBuilder("of ")).append(plugin.getName()).append(" and CS-CoreLib").toString());
+            System.err.println("请重启你的服务器以完成");
+            System.err.println((new StringBuilder("of ")).append(plugin.getName()).append(" 与 CS-CoreLib 的安装").toString());
             System.err.println(" ");
-            System.err.println("#################### - INFO - ####################");
+            System.err.println("#################### - 信息 - ####################");
             System.err.println(" ");
         }
         catch(IOException e)
@@ -177,12 +177,12 @@ public class CSCoreLibLoader
             if(output != null)
                 output.close();
             System.err.println(" ");
-            System.err.println("#################### - INFO - ####################");
+            System.err.println("#################### - 信息 - ####################");
             System.err.println(" ");
             System.err.println("Please restart your Server to finish the Installation");
             System.err.println((new StringBuilder("of ")).append(plugin.getName()).append(" and CS-CoreLib").toString());
             System.err.println(" ");
-            System.err.println("#################### - INFO - ####################");
+            System.err.println("#################### - 信息 - ####################");
             System.err.println(" ");
         }
         catch(IOException e)
@@ -197,12 +197,12 @@ public class CSCoreLibLoader
             if(output != null)
                 output.close();
             System.err.println(" ");
-            System.err.println("#################### - INFO - ####################");
+            System.err.println("#################### - 信息 - ####################");
             System.err.println(" ");
-            System.err.println("Please restart your Server to finish the Installation");
-            System.err.println((new StringBuilder("of ")).append(plugin.getName()).append(" and CS-CoreLib").toString());
+            System.err.println("请重启你的服务器以完成");
+            System.err.println((new StringBuilder("of ")).append(plugin.getName()).append(" 与 CS-CoreLib 的安装").toString());
             System.err.println(" ");
-            System.err.println("#################### - INFO - ####################");
+            System.err.println("#################### - 信息 - ####################");
             System.err.println(" ");
         }
         catch(IOException e)
