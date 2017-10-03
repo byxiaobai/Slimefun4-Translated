@@ -1,3 +1,4 @@
+// 已汉化
 package me.mrCookieSlime.Slimefun.Android;
 
 import java.io.File;
