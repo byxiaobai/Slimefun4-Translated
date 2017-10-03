@@ -1,8 +1,3 @@
-// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
-// Jad home page: http://www.kpdus.com/jad.html
-// Decompiler options: packimports(3) fieldsfirst 
-// Source File Name:   MultiBlockInteractEvent.java
-
 package me.mrCookieSlime.Slimefun.Events;
 
 import me.mrCookieSlime.Slimefun.Objects.MultiBlock;
