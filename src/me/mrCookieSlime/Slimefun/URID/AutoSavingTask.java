@@ -1,8 +1,3 @@
-// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
-// Jad home page: http://www.kpdus.com/jad.html
-// Decompiler options: packimports(3) fieldsfirst 
-// Source File Name:   AutoSavingTask.java
-
 package me.mrCookieSlime.Slimefun.URID;
 
 import java.io.PrintStream;
@@ -38,7 +33,7 @@ public class AutoSavingTask
 
         if(!worlds.isEmpty())
         {
-            System.out.println((new StringBuilder("[Slimefun] Auto-Saving Data... (Next Auto-Save: ")).append(SlimefunStartup.getCfg().getInt("options.auto-save-delay-in-minutes")).append("m)").toString());
+            System.out.println((new StringBuilder("[Slimefun] 少女祈祷中... (下一次祈祷在 ")).append(SlimefunStartup.getCfg().getInt("options.auto-save-delay-in-minutes")).append(" 分钟后)").toString());
             BlockStorage storage;
             for(Iterator iterator1 = worlds.iterator(); iterator1.hasNext(); storage.save(false))
                 storage = (BlockStorage)iterator1.next();
