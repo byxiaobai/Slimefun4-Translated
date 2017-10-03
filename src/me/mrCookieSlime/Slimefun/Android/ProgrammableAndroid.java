@@ -64,7 +64,7 @@ public abstract class ProgrammableAndroid extends SlimefunItem
 
     public String getInventoryTitle()
     {
-        return "\u53EF\u7F16\u7A0B\u5F0F\u673A\u5668\u4EBA";
+        return "编程式机器人 设置";
     }
 
     public int[] getOutputSlots()
@@ -1242,8 +1242,8 @@ label3:
             }
         }
 );
-        menu.addItem(6, new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzAxNTg2ZTM5ZjZmZmE2M2I0ZmIzMDFiNjVjYTdkYThhOTJmNzM1M2FhYWI4OWQzODg2NTc5MTI1ZGZiYWY5In19fQ=="), "&6> Download a Script", new String[] {
-            "", "&eDownload a Script from the Server", "&eYou can edit or simply use it"
+        menu.addItem(6, new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzAxNTg2ZTM5ZjZmZmE2M2I0ZmIzMDFiNjVjYTdkYThhOTJmNzM1M2FhYWI4OWQzODg2NTc5MTI1ZGZiYWY5In19fQ=="), "&6> 下载一个脚本", new String[] {
+            "", "&e从服务器中下载玩家们上传的脚本", "&e你可以直接使用", "&e或是修改它再使用"
         }), new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler() {
 
             final ProgrammableAndroid this$0;
@@ -1278,7 +1278,7 @@ label3:
     public void openScript(final Player p, final Block b, final String script)
         throws Exception
     {
-        ChestMenu menu = new ChestMenu("&eScript Editor");
+        ChestMenu menu = new ChestMenu("&e脚本编辑器");
         final String commands[] = script.split("-");
         menu.addItem(0, ScriptPart.START.toItemStack());
         menu.addMenuClickHandler(0, new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler() {
@@ -1305,7 +1305,7 @@ label3:
                 int additional = commands.length != 54 ? 1 : 0;
                 if(additional == 1)
                 {
-                    menu.addItem(i, new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTcxZDg5NzljMTg3OGEwNTk4N2E3ZmFmMjFiNTZkMWI3NDRmOWQwNjhjNzRjZmZjZGUxZWExZWRhZDU4NTIifX19"), "&7> Add new Command"));
+                    menu.addItem(i, new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTcxZDg5NzljMTg3OGEwNTk4N2E3ZmFmMjFiNTZkMWI3NDRmOWQwNjhjNzRjZmZjZGUxZWExZWRhZDU4NTIifX19"), "&7> 添加一个新命令"));
                     menu.addMenuClickHandler(i, new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler() {
 
                         final ProgrammableAndroid this$0;
@@ -1360,7 +1360,7 @@ label3:
             {
                 ItemStack stack = ScriptPart.valueOf(commands[i]).toItemStack();
                 menu.addItem(i, new CustomItem(stack, stack.getItemMeta().getDisplayName(), new String[] {
-                    "", "&7\u21E8 &eLeft Click &7to edit", "&7\u21E8 &eRight Click &7to delete", "&7\u21E8 &eShift + Right Click &7to duplicate"
+                    "", "&7\u21E8 &e左键 &7以修改t", "&7\u21E8 &e右键 &7以删除", "&7\u21E8 &eShift + 右键 &7以复制"
                 }));
                 menu.addMenuClickHandler(i, new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler() {
 
@@ -1467,7 +1467,7 @@ label3:
     private void openScriptDownloader(final Player p, final Block b, final int page)
         throws Exception
     {
-        ChestMenu menu = new ChestMenu("Slimefun Guide");
+        ChestMenu menu = new ChestMenu("粘液科技指南");
         menu.addMenuOpeningHandler(new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuOpeningHandler() {
 
             final ProgrammableAndroid this$0;
@@ -1508,7 +1508,7 @@ label3:
 );
         }
 
-        menu.addItem(46, new CustomItem(new MaterialData(Material.STAINED_GLASS_PANE, (byte)5), "&r\u21E6 Previous Page", new String[] {
+        menu.addItem(46, new CustomItem(new MaterialData(Material.STAINED_GLASS_PANE, (byte)5), "&r\u21E6 上一页", new String[] {
             "", (new StringBuilder("&7(")).append(page).append(" / ").append(pages).append(")").toString()
         }));
         menu.addMenuClickHandler(46, new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler() {
@@ -1547,8 +1547,8 @@ label3:
             }
         }
 );
-        menu.addItem(49, new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTA1YTJjYWI4YjY4ZWE1N2UzYWY5OTJhMzZlNDdjOGZmOWFhODdjYzg3NzYyODE5NjZmOGMzY2YzMWEzOCJ9fX0="), "&eUpload a Script", new String[] {
-            "", "&6Click &7to upload your Android's Script", "&7to the Database"
+        menu.addItem(49, new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTA1YTJjYWI4YjY4ZWE1N2UzYWY5OTJhMzZlNDdjOGZmOWFhODdjYzg3NzYyODE5NjZmOGMzY2YzMWEzOCJ9fX0="), "&e上传一个脚本", new String[] {
+            "", "&6单击 &7以上传此机器人", "&7正在使用的脚本到数据库"
         }));
         menu.addMenuClickHandler(49, new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler() {
 
@@ -1631,7 +1631,7 @@ label3:
             }
         }
 );
-        menu.addItem(52, new CustomItem(new MaterialData(Material.STAINED_GLASS_PANE, (byte)5), "&rNext Page \u21E8", new String[] {
+        menu.addItem(52, new CustomItem(new MaterialData(Material.STAINED_GLASS_PANE, (byte)5), "&r下一页 \u21E8", new String[] {
             "", (new StringBuilder("&7(")).append(page).append(" / ").append(pages).append(")").toString()
         }));
         menu.addMenuClickHandler(52, new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler() {
@@ -1681,11 +1681,11 @@ label3:
             String author = op == null || op.getName() == null ? script.getString("author_name") : op.getName();
             if(script.getString("author").equals(p.getUniqueId().toString()))
                 menu.addItem(index, new CustomItem(getItem(), (new StringBuilder("&b")).append(script.getString("name")).toString(), new String[] {
-                    (new StringBuilder("&7by &r")).append(author).toString(), "", (new StringBuilder("&7Downloads: &r")).append(script.getInt("downloads")).toString(), (new StringBuilder("&7Rating: ")).append(getScriptRatingPercentage(script)).toString(), (new StringBuilder("&a")).append(getScriptRating(script, true)).append(" \u263A &7- &4\u2639 ").append(getScriptRating(script, false)).toString(), "", "&eLeft Click &rto download this Script", "&4(This will override your current Script)"
+                    (new StringBuilder("&7作者 &r")).append(author).toString(), "", (new StringBuilder("&7下载次数: &r")).append(script.getInt("downloads")).toString(), (new StringBuilder("&7评价: ")).append(getScriptRatingPercentage(script)).toString(), (new StringBuilder("&a")).append(getScriptRating(script, true)).append(" \u263A &7- &4\u2639 ").append(getScriptRating(script, false)).toString(), "", "&e左键 &r以下载此脚本", "&4(这将会覆盖你原有的脚本)"
                 }));
             else
                 menu.addItem(index, new CustomItem(getItem(), (new StringBuilder("&b")).append(script.getString("name")).toString(), new String[] {
-                    (new StringBuilder("&7by &r")).append(author).toString(), "", (new StringBuilder("&7Downloads: &r")).append(script.getInt("downloads")).toString(), (new StringBuilder("&7Rating: ")).append(getScriptRatingPercentage(script)).toString(), (new StringBuilder("&a")).append(getScriptRating(script, true)).append(" \u263A &7- &4\u2639 ").append(getScriptRating(script, false)).toString(), "", "&eLeft Click &rto download this Script", "&4(This will override your current Script)", "&eShift + Left Click &rto leave a positive Rating", "&eShift + Right Click &rto leave a negative Rating"
+                    (new StringBuilder("&7作者 &r")).append(author).toString(), "", (new StringBuilder("&7下载次数: &r")).append(script.getInt("downloads")).toString(), (new StringBuilder("&7评价: ")).append(getScriptRatingPercentage(script)).toString(), (new StringBuilder("&a")).append(getScriptRating(script, true)).append(" \u263A &7- &4\u2639 ").append(getScriptRating(script, false)).toString(), "", "&e左键 &r以下载此脚本", "&4(这将会覆盖你原有的脚本)", "&eShift + 左键 &r给好评", "&eShift + 右键 &r给差评"
                 }));
             menu.addMenuClickHandler(index, new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler() {
 
@@ -1813,7 +1813,7 @@ label3:
     protected void openScriptComponentEditor(Player p, final Block b, String script, final int index)
         throws Exception
     {
-        ChestMenu menu = new ChestMenu("&eScript Editor");
+        ChestMenu menu = new ChestMenu("&e脚本编辑器");
         final String commands[] = script.split("-");
         menu.addItem(0, new CustomItem(new MaterialData(Material.STAINED_GLASS_PANE, (byte)7), " ", new String[0]), new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler() {
 
@@ -1959,7 +1959,7 @@ label3:
             }
         }
 );
-        menu.addItem(9, new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTYxMzlmZDFjNTY1NGU1NmU5ZTRlMmM4YmU3ZWIyYmQ1YjQ5OWQ2MzM2MTY2NjNmZWVlOTliNzQzNTJhZDY0In19fQ=="), "&rDo nothing"), new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler() {
+        menu.addItem(9, new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTYxMzlmZDFjNTY1NGU1NmU5ZTRlMmM4YmU3ZWIyYmQ1YjQ5OWQ2MzM2MTY2NjNmZWVlOTliNzQzNTJhZDY0In19fQ=="), "&r什么也不做"), new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler() {
 
             final ProgrammableAndroid this$0;
             private final String val$commands[];
@@ -2070,7 +2070,7 @@ label3:
         int size = BlockStorage.getInventory(b).toInventory().getSize();
         Inventory inv = Bukkit.createInventory(null, size);
         for(int i = 0; i < size; i++)
-            inv.setItem(i, new CustomItem(Material.COMMAND, " &4ALL YOUR PLACEHOLDERS ARE BELONG TO US", 0));
+            inv.setItem(i, new CustomItem(Material.COMMAND, " &4你所有的占位符都是我们的了蛤蛤蛤!", 0));
 
         int ai[];
         int k = (ai = getOutputSlots()).length;
