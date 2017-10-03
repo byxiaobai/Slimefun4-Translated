@@ -1,8 +1,3 @@
-// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
-// Jad home page: http://www.kpdus.com/jad.html
-// Decompiler options: packimports(3) fieldsfirst 
-// Source File Name:   CSCoreLibLoader.java
-
 package me.mrCookieSlime.Slimefun.CSCoreLibSetup;
 
 import java.io.*;
@@ -39,17 +34,16 @@ public class CSCoreLibLoader
         } else
         {
             System.err.println(" ");
-            System.err.println("#################### - INFO - ####################");
+            System.err.println("#################### - 信息 - ####################");
             System.err.println(" ");
-            System.err.println((new StringBuilder(String.valueOf(plugin.getName()))).append(" could not be loaded.").toString());
-            System.err.println("It appears that you have not installed CS-CoreLib");
-            System.err.println("Your Server will now try to download and install");
-            System.err.println("CS-CoreLib for you.");
-            System.err.println("You will be asked to restart your Server when it's finished.");
-            System.err.println("If this somehow fails, please download and install CS-CoreLib manually:");
+            System.err.println((new StringBuilder(String.valueOf(plugin.getName()))).append(" 未能被加载.").toString());
+            System.err.println("粗心大意的你一定忘记安装了 CS-CoreLib");
+            System.err.println("但机智的我正在自动下载并安装 CS-Corelib");
+            System.err.println("下载完成的时候麻烦你重启一下");
+            System.err.println("如果你的机子处在好多层墙里, 请带好梯子去这里下载:");
             System.err.println("https://dev.bukkit.org/projects/cs-corelib");
             System.err.println(" ");
-            System.err.println("#################### - INFO - ####################");
+            System.err.println("#################### - 信息 - ####################");
             System.err.println(" ");
             plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
 
@@ -88,13 +82,13 @@ public class CSCoreLibLoader
         catch(IOException e)
         {
             System.err.println(" ");
-            System.err.println("#################### - WARNING - ####################");
+            System.err.println("#################### - 警告 - ####################");
             System.err.println(" ");
-            System.err.println("Could not connect to BukkitDev.");
-            System.err.println("Please download & install CS-CoreLib manually:");
+            System.err.println("我TM的连不上 BukkitDev啦!");
+            System.err.println("快! 打开这个连接去下载!");
             System.err.println("https://dev.bukkit.org/projects/cs-corelib");
             System.err.println(" ");
-            System.err.println("#################### - WARNING - ####################");
+            System.err.println("#################### - 警告 - ####################");
             System.err.println(" ");
             return false;
         }
