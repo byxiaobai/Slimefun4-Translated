@@ -1,8 +1,3 @@
-// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
-// Jad home page: http://www.kpdus.com/jad.html
-// Decompiler options: packimports(3) fieldsfirst 
-// Source File Name:   OilResource.java
-
 package me.mrCookieSlime.Slimefun.GEO.Resources;
 
 import java.util.Random;
