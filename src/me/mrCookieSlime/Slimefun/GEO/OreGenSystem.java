@@ -1,8 +1,3 @@
-// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
-// Jad home page: http://www.kpdus.com/jad.html
-// Decompiler options: packimports(3) fieldsfirst 
-// Source File Name:   OreGenSystem.java
-
 package me.mrCookieSlime.Slimefun.GEO;
 
 import java.io.PrintStream;
@@ -33,7 +28,7 @@ public class OreGenSystem
     public static void registerResource(OreGenResource resource)
     {
         map.put(resource.getName(), resource);
-        System.out.println((new StringBuilder("[Slimefun - GEO] \u6B63\u5728\u6CE8\u518C\u77FF\u7269\u751F\u6210\u5668: ")).append(resource.getName()).toString());
+        System.out.println((new StringBuilder("[Slimefun - GEO] 正在注册矿物生成器: ")).append(resource.getName()).toString());
         Config cfg = new Config((new StringBuilder("plugins/Slimefun/generators/")).append(resource.getName()).append(".cfg").toString());
         Biome abiome[];
         int j = (abiome = Biome.values()).length;
