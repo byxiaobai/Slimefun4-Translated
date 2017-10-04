@@ -1,8 +1,3 @@
-// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
-// Jad home page: http://www.kpdus.com/jad.html
-// Decompiler options: packimports(3) fieldsfirst 
-// Source File Name:   SlimefunGuide.java
-
 package me.mrCookieSlime.Slimefun;
 
 import java.util.*;
@@ -41,9 +36,6 @@ import org.bukkit.material.MaterialData;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.scheduler.BukkitScheduler;
 
-// Referenced classes of package me.mrCookieSlime.Slimefun:
-//            SlimefunStartup
-
 public class SlimefunGuide
 {
 
@@ -81,18 +73,18 @@ public class SlimefunGuide
         switch($SWITCH_TABLE$me$mrCookieSlime$Slimefun$Misc$BookDesign()[design.ordinal()])
         {
         case 1: // '\001'
-            return new CustomItem(new MaterialData(Material.ENCHANTED_BOOK), "&a\u7C98\u6DB2\u79D1\u6280\u6307\u5357 &7(\u4E66\u672C GUI)", new String[] {
-                "", "&e\u53F3\u952E &8\u21E8 &7\u6D4F\u89C8\u7269\u54C1", "&eShift + \u53F3\u952E &8\u21E8 &7\u6253\u5F00\u8BBE\u7F6E / \u4F5C\u8005\u5217\u8868"
+            return new CustomItem(new MaterialData(Material.ENCHANTED_BOOK), "&a粘液科技指南 &7(书本 GUI)", new String[] {
+                "", "&e右键 &8⇨ &7浏览物品", "&eShift + 右键 &8⇨ &7打开设置 / 作者列表"
             });
 
         case 3: // '\003'
-            return new CustomItem(new MaterialData(Material.ENCHANTED_BOOK), "&c\u7C98\u6DB2\u79D1\u6280\u6307\u5357 &4(\u4F5C\u5F0A\u6A21\u5F0F)", new String[] {
-                "", "&4&l\u4EC5\u9650\u7BA1\u7406\u5458\u4F7F\u7528", "", "&e\u53F3\u952E &8\u21E8 &7\u6D4F\u89C8\u7269\u54C1", "&eShift + \u53F3\u952E &8\u21E8 &7\u6253\u5F00\u8BBE\u7F6E / \u4F5C\u8005\u5217\u8868"
+            return new CustomItem(new MaterialData(Material.ENCHANTED_BOOK), "&c粘液科技指南 &4(作弊模式)", new String[] {
+                "", "&4&l仅限管理员使用", "", "&e右键 &8⇨ &7浏览物品", "&eShift + 右键 &8⇨ &7打开设置 / 作者列表"
             });
 
         case 2: // '\002'
-            return new CustomItem(new MaterialData(Material.ENCHANTED_BOOK), "&a\u7C98\u6DB2\u79D1\u6280\u6307\u5357 &7(\u7BB1\u5B50 GUI)", new String[] {
-                "", "&e\u53F3\u952E &8\u21E8 &7\u6D4F\u89C8\u7269\u54C1", "&eShift + \u53F3\u952E &8\u21E8 &7\u6253\u5F00\u8BBE\u7F6E / \u4F5C\u8005\u5217\u8868"
+            return new CustomItem(new MaterialData(Material.ENCHANTED_BOOK), "&a粘液科技指南 &7(箱子 GUI)", new String[] {
+                "", "&e右键 &8⇨ &7浏览物品", "&eShift + 右键 &8⇨ &7打开设置 / 作者列表"
             });
         }
         return null;
@@ -109,14 +101,14 @@ public class SlimefunGuide
 
     public static ItemStack getDeprecatedItem(boolean book)
     {
-        return new CustomItem(new MaterialData(Material.ENCHANTED_BOOK), "&e\u7C98\u6DB2\u79D1\u6280\u6307\u5357 &7(\u53F3\u952E\u6253\u5F00)", new String[] {
-            book ? "" : "&2", "&r\u8FD9\u662F\u7C98\u6DB2\u79D1\u6280\u7684\u57FA\u7840\u6307\u5357", "&r\u4F60\u53EF\u4EE5\u67E5\u770B\u6240\u6709\u8BE5\u63D2\u4EF6\u5185", "&r\u6216\u9644\u5C5E\u63D2\u4EF6\u7684\u6240\u6709\u7269\u54C1\u548C\u5408\u6210\u8868", "&r\u4EE5\u53CA\u4E00\u4E9B\u4FE1\u606F"
+        return new CustomItem(new MaterialData(Material.ENCHANTED_BOOK), "&e粘液科技指南 &7(右键打开)", new String[] {
+            book ? "" : "&2", "&r这是粘液科技的基础指南", "&r你可以查看所有该插件内", "&r或附属插件的所有物品和合成表", "&r以及一些信息"
         });
     }
 
     public static void openSettings(Player p, final ItemStack guide)
     {
-        ChestMenu menu = new ChestMenu("\u8BBE\u7F6E / \u5173\u4E8E");
+        ChestMenu menu = new ChestMenu("设置 / 关于");
         menu.addMenuOpeningHandler(new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuOpeningHandler() {
 
             public void onOpen(Player p)
@@ -147,8 +139,8 @@ public class SlimefunGuide
         {
             if(p.hasPermission("slimefun.cheat.items"))
             {
-                menu.addItem(19, new CustomItem(new MaterialData(Material.CHEST), "&7\u6307\u5357\u6837\u5F0F: &e\u7BB1\u5B50 GUI", new String[] {
-                    "", "&a\u7BB1\u5B50 GUI", "&7\u4E66\u672C GUI", "&7\u4F5C\u5F0A\u9762\u677F", "", "&e \u5355\u51FB &8\u21E8 &7\u6539\u53D8\u6837\u5F0F"
+                menu.addItem(19, new CustomItem(new MaterialData(Material.CHEST), "&7指南样式: &e箱子 GUI", new String[] {
+                    "", "&a箱子 GUI", "&7书本 GUI", "&7作弊面板", "", "&e 单击 &8⇨ &7改变样式"
                 }));
                 menu.addMenuClickHandler(19, new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler() {
 
@@ -163,8 +155,8 @@ public class SlimefunGuide
 );
             } else
             {
-                menu.addItem(19, new CustomItem(new MaterialData(Material.CHEST), "&7\u6307\u5357\u6837\u5F0F: &e\u7BB1\u5B50 GUI", new String[] {
-                    "", "&a\u7BB1\u5B50 GUI", "&7\u4E66\u4E0E\u7B14 GUI", "", "&e \u5355\u51FB &8\u21E8 &7\u4FEE\u6539\u6837\u5F0F"
+                menu.addItem(19, new CustomItem(new MaterialData(Material.CHEST), "&7指南样式: &e箱子 GUI", new String[] {
+                    "", "&a箱子 GUI", "&7书与笔 GUI", "", "&e 单击 &8⇨ &7修改样式"
                 }));
                 menu.addMenuClickHandler(19, new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler() {
 
@@ -183,8 +175,8 @@ public class SlimefunGuide
         {
             if(p.hasPermission("slimefun.cheat.items"))
             {
-                menu.addItem(19, new CustomItem(new MaterialData(Material.CHEST), "&7\u6307\u5357\u6837\u5F0F: &e\u4E66\u4E0E\u7B14 GUI", new String[] {
-                    "", "&7\u7BB1\u5B50 GUI", "&a\u4E66\u4E0E\u7B14 GUI", "&7\u4F5C\u5F0A\u9762\u677F", "", "&e \u5355\u51FB &8\u21E8 &7\u4FEE\u6539\u6837\u5F0F"
+                menu.addItem(19, new CustomItem(new MaterialData(Material.CHEST), "&7指南样式: &e书与笔 GUI", new String[] {
+                    "", "&7箱子 GUI", "&a书与笔 GUI", "&7作弊面板", "", "&e 单击 &8⇨ &7修改样式"
                 }));
                 menu.addMenuClickHandler(19, new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler() {
 
@@ -199,8 +191,8 @@ public class SlimefunGuide
 );
             } else
             {
-                menu.addItem(19, new CustomItem(new MaterialData(Material.CHEST), "&7\u6307\u5357\u6837\u5F0F: &e\u4E66\u4E0E\u7B14 GUI", new String[] {
-                    "", "&7\u7BB1\u5B50 GUI", "&a\u4E66\u4E0E\u7B14 GUI", "", "&e \u5355\u51FB &8\u21E8 &7\u4FEE\u6539\u6837\u5F0F"
+                menu.addItem(19, new CustomItem(new MaterialData(Material.CHEST), "&7指南样式: &e书与笔 GUI", new String[] {
+                    "", "&7箱子 GUI", "&a书与笔 GUI", "", "&e 单击 &8⇨ &7修改样式"
                 }));
                 menu.addMenuClickHandler(19, new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler() {
 
@@ -217,8 +209,8 @@ public class SlimefunGuide
         } else
         if(SlimefunManager.isItemSimiliar(guide, getItem(BookDesign.CHEAT_SHEET), true))
         {
-            menu.addItem(19, new CustomItem(new MaterialData(Material.CHEST), "&7\u6307\u5357\u6837\u5F0F: &e\u4F5C\u5F0A\u9762\u677F", new String[] {
-                "", "&7Chest GUI", "&7Book GUI", "&aCheat Sheet", "", "&e \u5355\u51FB &8\u21E8 &7\u4FEE\u6539\u6837\u5F0F"
+            menu.addItem(19, new CustomItem(new MaterialData(Material.CHEST), "&7指南样式: &e作弊面板", new String[] {
+                "", "&7Chest GUI", "&7Book GUI", "&aCheat Sheet", "", "&e 单击 &8⇨ &7修改样式"
             }));
             menu.addMenuClickHandler(19, new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler() {
 
@@ -232,8 +224,8 @@ public class SlimefunGuide
             }
 );
         }
-        menu.addItem(1, new CustomItem(new MaterialData(Material.BOOK_AND_QUILL), "&a\u5236\u4F5C\u4EBA\u5458", new String[] {
-            "", (new StringBuilder("&7\u76EE\u524D\u7248\u672C: &a")).append(SlimefunStartup.instance.getDescription().getVersion()).toString(), (new StringBuilder("&7\u8D21\u732E\u8005: &e")).append(contributors.size()).toString(), "", "&7\u21E8 \u5355\u51FB\u67E5\u770B\u5728\u63D2\u4EF6\u80CC\u540E\u5DE5\u4F5C\u7684\u4EBA\u4EEC"
+        menu.addItem(1, new CustomItem(new MaterialData(Material.BOOK_AND_QUILL), "&a制作人员", new String[] {
+            "", (new StringBuilder("&7目前版本: &a")).append(SlimefunStartup.instance.getDescription().getVersion()).toString(), (new StringBuilder("&7贡献者: &e")).append(contributors.size()).toString(), "", "&7⇨ 单击查看在插件背后工作的人们"
         }));
         menu.addMenuClickHandler(1, new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler() {
 
@@ -254,9 +246,9 @@ public class SlimefunGuide
 );
         try
         {
-            menu.addItem(4, new CustomItem(new MaterialData(Material.REDSTONE_COMPARATOR), "&e\u6E90\u7801", new String[] {
-                "", (new StringBuilder("&7\u4EE3\u7801\u884C\u6570: &6")).append(IntegerFormat.formatBigNumber(code_bytes)).toString(), (new StringBuilder("&7\u4EE3\u7801\u66F4\u65B0\u4E8E &a")).append(IntegerFormat.timeDelta(last_update)).append(" \u524D").toString(), (new StringBuilder("&7\u5206\u652F: &e")).append(forks).toString(), "", "&7&oSlimefun 4 \u662F\u4E00\u4E2A\u793E\u533A\u6027\u7684\u9879\u76EE.", "&7&o\u4E14\u6E90\u7801\u5F00\u6E90\u5728 Github \u4E0A", "&7&o\u5982\u679C\u4F60\u60F3\u8BA9\u63D2\u4EF6\u7EE7\u7EED\u7EF4\u62A4,", "&7&o\u53EF\u4EE5\u8003\u8651\u652F\u6301\u6211\u4EEC.", "", 
-                "&7\u21E8 \u5355\u51FB\u53BB \u7C98\u6DB2\u79D1\u6280 4 \u7684 Github \u754C\u9762"
+            menu.addItem(4, new CustomItem(new MaterialData(Material.REDSTONE_COMPARATOR), "&e源码", new String[] {
+                "", (new StringBuilder("&7代码行数: &6")).append(IntegerFormat.formatBigNumber(code_bytes)).toString(), (new StringBuilder("&7代码更新于 &a")).append(IntegerFormat.timeDelta(last_update)).append(" 前").toString(), (new StringBuilder("&7分支: &e")).append(forks).toString(), "", "&7&oSlimefun 4 是一个社区性的项目.", "&7&o且源码开源在 Github 上", "&7&o如果你想让插件继续维护,", "&7&o可以考虑支持我们.", "", 
+                "&7⇨ 单击去 粘液科技 4 的 Github 界面"
             }));
             menu.addMenuClickHandler(4, new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler() {
 
@@ -276,8 +268,8 @@ public class SlimefunGuide
         {
             e.printStackTrace();
         }
-        menu.addItem(7, new CustomItem(new MaterialData(Material.REDSTONE), "&4\u95EE\u9898\u8FFD\u8E2A\u5668", new String[] {
-            "", (new StringBuilder("&7\u672A\u89E3\u51B3\u7684\u95EE\u9898: &a")).append(issues).toString(), "", "&7\u21E8 \u5355\u51FB\u6253\u5F00\u7C98\u6DB2\u79D1\u6280 \u95EE\u9898\u8FFD\u8E2A\u5668"
+        menu.addItem(7, new CustomItem(new MaterialData(Material.REDSTONE), "&4问题追踪器", new String[] {
+            "", (new StringBuilder("&7未解决的问题: &a")).append(issues).toString(), "", "&7⇨ 单击打开粘液科技 问题追踪器"
         }));
         menu.addMenuClickHandler(7, new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler() {
 
@@ -299,7 +291,7 @@ public class SlimefunGuide
 
     public static void openCredits(Player p, final ItemStack guide)
     {
-        ChestMenu menu = new ChestMenu("\u5236\u4F5C\u4EBA\u5458\u8868");
+        ChestMenu menu = new ChestMenu("制作人员表");
         menu.addMenuOpeningHandler(new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuOpeningHandler() {
 
             public void onOpen(Player p)
@@ -324,7 +316,7 @@ public class SlimefunGuide
 );
             } else
             {
-                menu.addItem(4, new CustomItem(new MaterialData(Material.EMERALD), "&7\u21E6 \u8FD4\u56DE\u8BBE\u7F6E", new String[0]));
+                menu.addItem(4, new CustomItem(new MaterialData(Material.EMERALD), "&7⇦ 返回设置", new String[0]));
                 menu.addMenuClickHandler(4, new me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler() {
 
                     private final ItemStack val$guide;
@@ -362,12 +354,12 @@ public class SlimefunGuide
             {
                 double percentage = DoubleHandler.fixDouble(((double)contributor.commits * 100D) / total, 2);
                 meta.setLore(Arrays.asList(new String[] {
-                    "", ChatColor.translateAlternateColorCodes('&', (new StringBuilder("&7\u89D2\u8272: &r")).append(contributor.job).toString()), ChatColor.translateAlternateColorCodes('&', (new StringBuilder("&7\u8D21\u732E\u7387: &r")).append(percentage).append("%").toString()), "", ChatColor.translateAlternateColorCodes('&', "&7\u21E8 \u5355\u51FB\u6253\u5F00\u6211\u7684 Github \u4E2A\u4EBA\u4E3B\u9875")
+                    "", ChatColor.translateAlternateColorCodes('&', (new StringBuilder("&7角色: &r")).append(contributor.job).toString()), ChatColor.translateAlternateColorCodes('&', (new StringBuilder("&7贡献率: &r")).append(percentage).append("%").toString()), "", ChatColor.translateAlternateColorCodes('&', "&7⇨ 单击打开我的 Github 个人主页")
                 }));
             } else
             {
                 meta.setLore(Arrays.asList(new String[] {
-                    "", ChatColor.translateAlternateColorCodes('&', (new StringBuilder("&7\u89D2\u8272: &r")).append(contributor.job).toString())
+                    "", ChatColor.translateAlternateColorCodes('&', (new StringBuilder("&7角色: &r")).append(contributor.job).toString())
                 }));
             }
             skull.setItemMeta(meta);
