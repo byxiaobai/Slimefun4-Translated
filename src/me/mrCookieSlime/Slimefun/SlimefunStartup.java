@@ -144,24 +144,24 @@ public class SlimefunStartup extends JavaPlugin
 
                 if(!compatibleVersion)
                 {
-                    System.err.println("### Slimefun \u52A0\u8F7D\u5931\u8D25!");
+                    System.err.println("### Slimefun 加载失败!");
                     System.err.println("###");
-                    System.err.println("### \u4F60\u4F7F\u7528\u4E86\u9519\u8BEF\u7684 Minecraft \u7248\u672C!");
+                    System.err.println("### 你使用了错误的 Minecraft 版本!");
                     System.err.println("###");
-                    System.err.println((new StringBuilder("### \u4F60\u6B63\u5728\u4F7F\u7528 Minecraft")).append(ReflectionUtils.getVersion()).toString());
-                    System.err.println((new StringBuilder("### \u4F46\u662F Slimefun v")).append(getDescription().getVersion()).append(" \u9700\u8981\u4F60\u4F7F\u7528").toString());
+                    System.err.println((new StringBuilder("### 你正在使用 Minecraft")).append(ReflectionUtils.getVersion()).toString());
+                    System.err.println((new StringBuilder("### 但是 Slimefun v")).append(getDescription().getVersion()).append(" 需要你使用").toString());
                     System.err.println((new StringBuilder("### Minecraft ")).append(versions.toString()).toString());
                     System.err.println("###");
-                    System.err.println("### \u5982\u679C\u4F60\u4ECD\u9700\u6E38\u73A9, \u8BF7\u4F7F\u7528\u65E7\u7248\u672C\u5E76\u5173\u95ED\u81EA\u52A8\u66F4\u65B0.");
-                    System.err.println("### \u6216\u8005\u66F4\u65B0\u4F60\u7684 Minecraft \u670D\u52A1\u7AEF.");
+                    System.err.println("### 如果你仍需使用此插件 请使用旧版本并关闭自动更新.");
+                    System.err.println("### 或者更新你的 Minecraft 服务端.");
                     getServer().getPluginManager().disablePlugin(this);
                     return;
                 }
             }
             instance = this;
-            System.out.println("[Slimefun] \u6B63\u5728\u8BFB\u53D6\u6587\u4EF6...");
+            System.out.println("[Slimefun] 正在读取文件...");
             Files.cleanup();
-            System.out.println("[Slimefun] \u6B63\u5728\u8BFB\u53D6\u914D\u7F6E...");
+            System.out.println("[Slimefun] 正在读取配置...");
             utils = new PluginUtils(this);
             utils.setupConfig();
             researches = new Config(Files.RESEARCHES);
@@ -196,7 +196,7 @@ public class SlimefunStartup extends JavaPlugin
             if(!(new File("plugins/Slimefun/cache/github")).exists())
                 (new File("plugins/Slimefun/cache/github")).mkdirs();
             SlimefunManager.plugin = this;
-            System.out.println("[Slimefun] \u6B63\u5728\u52A0\u8F7D\u7269\u54C1...");
+            System.out.println("[Slimefun] 正在加载物品...");
             MiscSetup.setupItemSettings();
             try
             {
@@ -207,12 +207,12 @@ public class SlimefunStartup extends JavaPlugin
                 e1.printStackTrace();
             }
             MiscSetup.loadDescriptions();
-            System.out.println("[Slimefun] \u6B63\u5728\u8F7D\u5165\u7814\u7A76...");
+            System.out.println("[Slimefun] 正在载入研究...");
             Research.enabled = getResearchCfg().getBoolean("enable-researching");
             ResearchSetup.setupResearches();
             MiscSetup.setupMisc();
             BlockStorage.info_delay = config.getInt("URID.info-delay");
-            System.out.println("[Slimefun] \u6B63\u5728\u52A0\u8F7D\u4E16\u754C\u751F\u6210\u5668...");
+            System.out.println("[Slimefun] 正在加载世界生成器...");
             OreGenSystem.registerResource(new OilResource());
             OreGenSystem.registerResource(new NetherIceResource());
             GitHubSetup.setup();
@@ -278,7 +278,7 @@ public class SlimefunStartup extends JavaPlugin
                     if(storage != null)
                         storage.save(true);
                     else
-                        System.err.println((new StringBuilder("[Slimefun] Could not save Slimefun Blocks for World \"")).append(e.getWorld().getName()).append("\"").toString());
+                        System.err.println((new StringBuilder("[Slimefun] 无法保存粘液科技方块在世界 \"")).append(e.getWorld().getName()).append("\"").toString());
                 }
 
             
@@ -334,12 +334,12 @@ public class SlimefunStartup extends JavaPlugin
                 {
                     Class.forName("com.sk89q.worldedit.extent.Extent");
                     new WESlimefunManager();
-                    System.out.println("[Slimefun] \u6210\u529F Hook \u81F3 WorldEdit!");
+                    System.out.println("[Slimefun] 成功连接至 WorldEdit!");
                 }
                 catch(Exception x)
                 {
-                    System.err.println("[Slimefun] \u65E0\u6CD5 Hook \u81F3 WorldEdit!");
-                    System.err.println("[Slimefun] \u8BD5\u8BD5\u66F4\u65B0 WorldEdit \u5427!");
+                    System.err.println("[Slimefun] 无法 Hook 至 WorldEdit!");
+                    System.err.println("[Slimefun] 试试更新 WorldEdit/Slimefun 吧!");
                 }
             getCommand("slimefun").setExecutor(new SlimefunCommand(this));
             getCommand("slimefun").setTabCompleter(new SlimefunTabCompleter());
@@ -429,7 +429,7 @@ public class SlimefunStartup extends JavaPlugin
             }
             }
 , 80L, 0x11940L);
-            System.out.println("[Slimefun] \u5C11\u5973\u7948\u7977\u5B8C\u4E86!  \u6C49\u5316: StarWish (MCBBS\u5E10\u53F7: Haisu)");
+            System.out.println("[Slimefun] 插件加载完成!  汉化: StarWish (MCBBS帐号: Haisu)");
             clearlag = getServer().getPluginManager().isPluginEnabled("ClearLag");
             coreProtect = getServer().getPluginManager().isPluginEnabled("CoreProtect");
             Bukkit.getScheduler().scheduleSyncDelayedTask(this, new BukkitRunnable() {
@@ -454,7 +454,7 @@ public class SlimefunStartup extends JavaPlugin
                 coreProtectAPI = ((CoreProtect)getServer().getPluginManager().getPlugin("CoreProtect")).getAPI();
             Research.creative_research = config.getBoolean("options.allow-free-creative-research");
             AutoEnchanter.max_emerald_enchantments = config.getInt("options.emerald-enchantment-limit");
-            CSCoreLib.getLib().filterLog("([A-Za-z0-9_]{3,16}) issued server command: /sf elevator (.{0,})");
+            CSCoreLib.getLib().filterLog("([A-Za-z0-9_]{3,16}) 使用了服务器命令: /sf elevator (.{0,})");
         }
     }
 
@@ -472,7 +472,7 @@ public class SlimefunStartup extends JavaPlugin
                 if(storage != null)
                     storage.save(true);
                 else
-                    System.err.println((new StringBuilder("[Slimefun] \u65E0\u6CD5\u5728\u4E16\u754C \"")).append(world.getName()).append("\" \u4FDD\u5B58\u7C98\u6DB2\u79D1\u6280\u65B9\u5757!").toString());
+                    System.err.println((new StringBuilder("[Slimefun] 无法在世界 \"")).append(world.getName()).append("\" 保存粘液科技方块!").toString());
             }
 
             SlimefunBackup.start();
