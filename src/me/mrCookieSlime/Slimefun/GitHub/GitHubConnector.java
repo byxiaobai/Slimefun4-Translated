@@ -1,8 +1,3 @@
-// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
-// Jad home page: http://www.kpdus.com/jad.html
-// Decompiler options: packimports(3) fieldsfirst 
-// Source File Name:   GitHubConnector.java
-
 package me.mrCookieSlime.Slimefun.GitHub;
 
 import com.google.gson.JsonElement;
@@ -42,7 +37,7 @@ public abstract class GitHubConnector
     public void pullFile()
     {
         if(SlimefunStartup.getCfg().getBoolean("options.print-out-github-data-retrieving"))
-            System.out.println((new StringBuilder("[Slimefun - GitHub] \u6B63\u4ECE Github \u4E0A\u83B7\u53D6 '")).append(getFileName()).append(".json' ...").toString());
+            System.out.println((new StringBuilder("[Slimefun - GitHub] 正从 Github 上获取 '")).append(getFileName()).append(".json' ...").toString());
         try
         {
             URL website = new URL((new StringBuilder("https://api.github.com/repos/")).append(getRepository()).append(getURLSuffix()).toString());
@@ -59,7 +54,7 @@ public abstract class GitHubConnector
         catch(IOException e)
         {
             if(SlimefunStartup.getCfg().getBoolean("options.print-out-github-data-retrieving"))
-                System.err.println("[Slimefun - GitHub] \u9519\u8BEF - \u65E0\u6CD5\u8FDE\u63A5\u81F3 GitHub!");
+                System.err.println("[Slimefun - GitHub] 错误 - 无法连接至 GitHub!");
             if(hasData())
                 parseData();
             else
